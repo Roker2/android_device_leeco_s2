@@ -178,6 +178,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect
 
+# Use daemon to detect folio open/close
+PRODUCT_PACKAGES += \
+    folio_daemon
+
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
