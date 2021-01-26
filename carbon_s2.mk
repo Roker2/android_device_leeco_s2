@@ -21,14 +21,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from s2 device
 $(call inherit-product, device/leeco/s2/device.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit Carbon GSM telephony parts
+$(call inherit-product, vendor/carbon/config/gsm.mk)
+
+# Inherit some common Carbon stuff.
+$(call inherit-product, vendor/carbon/config/common.mk)
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_BRAND := LeEco
 PRODUCT_DEVICE := s2
 PRODUCT_MANUFACTURER := LeMobile
-PRODUCT_NAME := lineage_s2
+PRODUCT_NAME := carbon_s2
 
 PRODUCT_GMS_CLIENTID_BASE := android-leeco
 
