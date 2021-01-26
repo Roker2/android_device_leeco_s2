@@ -49,5 +49,15 @@
                 android:resource="@xml/shortcuts"/>
         </activity>
 
+        <service
+            android:name=".Hal3TileService"
+            android:icon="@drawable/ic_qc_camera"
+            android:label="@string/camera_hal3_enable"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+        
     </application>
 </manifest>
