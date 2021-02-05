@@ -35,6 +35,7 @@ public class Hal3TileService extends TileService {
         Tile tile = getQsTile();
         boolean enabled = SettingsUtils.cameraHAL3Enable();
         SettingsUtils.writeCameraHAL3Prop(!enabled);
+        SettingsUtils.writeCameraRestartProp(this);
         tile.setState(!enabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
 
         tile.updateTile();
