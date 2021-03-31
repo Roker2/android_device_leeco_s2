@@ -235,6 +235,7 @@ PRODUCT_COPY_FILES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
+    keystore.msm8952 \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service
 
