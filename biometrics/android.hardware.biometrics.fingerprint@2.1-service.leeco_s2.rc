@@ -4,5 +4,15 @@ service fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-servi
     # /data is mounted.
     class late_start
     user system
-    group system input
+    group system input uhid
     writepid /dev/cpuset/system-background/tasks
+
+service gx_fpd /vendor/bin/gx_fpd
+    class late_start
+    user system
+    group system
+    writepid /dev/cpuset/system-background/tasks
+
+on boot
+    chown system system /dev/goodix_fp
+    chmod 0644 /dev/goodix_fp
