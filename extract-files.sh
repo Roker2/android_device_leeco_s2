@@ -72,6 +72,11 @@ function blob_fixup() {
         patchelf --remove-needed "libkeymaster_messages.so" "${2}"
         ;;
 
+
+    # Load tfa9890 config file from vendor
+    sed -i "s|/etc/settings/mono_qcom.cnt|/vendor/etc/tfa/mono_qc.cnt|g" vendor/lib/libtfa9890.so
+    sed -i "s|/etc/settings/mono_qcom.cnt|/vendor/etc/tfa/mono_qc.cnt|g" vendor/lib64/libtfa9890.so
+
     esac
 }
 
