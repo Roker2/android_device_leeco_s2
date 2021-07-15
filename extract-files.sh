@@ -78,6 +78,11 @@ function blob_fixup() {
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
         ;;
 
+    # Load goodixfp firmware from vendor
+    system/lib64/hw/gxfingerprint.default.so)
+        sed -i "s|/system/etc/firmware|/vendor/firmware\x0\x0\x0\x0|g" "${2}"
+        ;;
+
     esac
 }
 
